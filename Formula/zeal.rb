@@ -23,7 +23,7 @@ class Zeal < Formula
   def caveats
     <<~EOS
       To link Zeal.app to your Applications folder, run the following command:
-        ln -s #{opt_prefix}/Zeal.app /Applications/Zeal.app
+        ln -sf #{opt_prefix}/Zeal.app /Applications/Zeal.app
 
       Alternatively, you can manually create a symbolic link using Finder.
     EOS
