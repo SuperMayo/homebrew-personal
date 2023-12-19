@@ -18,9 +18,15 @@ class Zeal < Formula
       prefix.install "Zeal.app"
       (bin/"zeal").write("#! /bin/sh\n#{prefix}/Zeal.app/Contents/MacOS/Zeal \"$@\"\n")
     end
+  end
 
-    # Create a symbolic link in /Applications
-    system "ln", "-sf", "#{prefix}/Zeal.app", "/Applications/Zeal.app"
+  def caveats
+    <<~EOS
+      To link Zeal.app to your Applications folder, run the following command:
+        ln -s #{opt_prefix}/Zeal.app /Applications/Zeal.app
+
+      Alternatively, you can manually create a symbolic link using Finder.
+    EOS
   end
 
   test do
