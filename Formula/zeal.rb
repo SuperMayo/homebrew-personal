@@ -18,6 +18,9 @@ class Zeal < Formula
       prefix.install "Zeal.app"
       (bin/"zeal").write("#! /bin/sh\n#{prefix}/Zeal.app/Contents/MacOS/Zeal \"$@\"\n")
     end
+
+    # Create a symbolic link in /Applications
+    system "ln", "-sf", "#{prefix}/Zeal.app", "/Applications/Zeal.app"
   end
 
   test do
